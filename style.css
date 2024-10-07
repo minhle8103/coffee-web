@@ -135,7 +135,7 @@ header .navbar{
 .hero-section .hero-details .subtitle {
     font-size: var(--font-size-xl);
     font-weight: var(--font-weight-semibold);
-    margin-top: 8px;
+    margin-top: 20px;
     max-width: 70%;
 }
 
@@ -215,6 +215,61 @@ header .navbar{
 .about-section .social-link-list .social-link:hover{
     color:var(--secondary-color);
 }
+
+/* Menu section styling */
+.menu-section {
+    background: var(--dark-color);
+    color:var(--white-color);
+    padding: 50px 0 100px;
+}
+.menu-section .menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 110px;
+    justify-content: space-between;
+}
+
+.menu-section .menu-list .menu-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: calc(100% / 3 - 110px);
+    justify-content: space-between;
+    text-align: center;
+}
+
+.menu-section .menu-list .menu-item .menu-image {
+    max-width: 83%;
+    aspect-ratio: 1;
+    margin-bottom: 15px;
+    object-fit: contain;
+}
+
+.menu-section .menu-list .menu-item .name {
+    margin: 12px 0;
+    padding: 25px;
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-semibold);
+}
+
+.menu-section .menu-list .menu-item .text {
+    font-size: var(--font-size-m);
+}
+
+/* Responsive media query code for max width 900px */
+@media screen and (max-width: 1024px){
+    .menu-section .menu-list {
+        gap: 60px;
+    }
+    .menu-section .menu-list .menu-item {
+        width: calc(100% / 3 - 110px);
+    }
+
+}
+
+
+/* Responsive media query code for max width 900px */
 @media screen and (max-width: 900px){
     :root{
         --font-size-m: 1rem;
@@ -291,6 +346,10 @@ header .navbar{
 
     .hero-section .hero-details :is(.subtitle .description), .about-section .about-details{
         max-width: 100%;
+
+    }
+    .hero-section .hero-details .subtitle, .hero-section .hero-details .description {
+        margin-left: 107px;
     }
 
     .hero-section .hero-details .buttons {
@@ -308,5 +367,23 @@ header .navbar{
         max-width: 250px;
         aspect-ratio: 1;
     }
-}
 
+    .menu-section .menu-list {
+        gap: 30px;
+    }
+    .menu-section .menu-list .menu-item {
+        width: calc(100% / 2 - 30px);
+    }
+    .menu-section .menu-list .menu-item .menu-image {
+        max-width: 200px;
+    }
+}
+@media screen and (max-width: 640px){
+    .menu-section .menu-list .menu-item {
+        width: 100%;
+    }
+
+    .menu-section .menu-list {
+        gap: 60px;
+    }
+}
